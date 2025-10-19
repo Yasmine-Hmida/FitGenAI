@@ -1,42 +1,134 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Container */
+.app-container {
+  min-height: 100vh;
+  background-color: #f5f7f8ed;
   padding: 2rem;
+}
+
+.app-content {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container *{
+  font-family: "Saira", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 60px;
+}
+
+#logoOne, #logoTwo {
+  color: #073b4c;
+}
+
+#logoThree{
+  color: #9ad1d4;
+}
+
+/* Description */
+.app-description {
   text-align: center;
+  color: #454545;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: "Saira", sans-serif;
+  font-weight: 400;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Input Section */
+.input-section {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.input-label {
+  display: block;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+
+  font-family: "Saira", sans-serif;
+  font-weight: 400;
 }
 
-.card {
-  padding: 2em;
+.input-textarea {
+  width: 90%;
+  height: 8rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  resize: none;
+  font-size: 1.1rem;
+  transition: border-color 0.2s;
+
+  font-family: "Saira", sans-serif;
+  font-weight: 300;
+  color: black;
 }
 
-.read-the-docs {
-  color: #888;
+.input-textarea:focus {
+  border-color: #073b4c; 
+}
+
+/* Button */
+.generate-button {
+  width: 95%;
+  margin-top: 1rem;
+  background-color: #073b4c;
+  color: white;
+  font-family: "Saira", sans-serif;
+  font-weight: 700; 
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.generate-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Response Section */
+.response-section {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.response-title {
+  font-size: 1.8rem;
+  font-family: "Saira", sans-serif;
+  font-weight: 700; 
+  color: #073b4c;
+  margin-bottom: 1rem;
+}
+
+.response-text {
+  color: #454545;
+  white-space: pre-line;
+  line-height: 1.6;
+
+  font-family: "Saira", sans-serif;
+  font-weight: 400; 
 }
