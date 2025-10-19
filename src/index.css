@@ -6,3 +6,17 @@
 ::selection{
   color: gray;
 }
+
+body{
+  background-image: url("./assets/gym.jpg");
+  background-size: cover;   
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 1024px){
+  body{
+    background-position: center;
+  }
+}
