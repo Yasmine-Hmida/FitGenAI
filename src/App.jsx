@@ -17,23 +17,12 @@ export default function App() {
     setTimeout(() => {
       setWorkoutPlan(`Based on your goals: "${userInput}", here's your personalized workout plan:
 
-        Monday - Upper Body Strength
-        - Bench Press: 4 sets x 8-10 reps
-        - Pull-ups: 3 sets x max reps
-        - Overhead Press: 3 sets x 10 reps
-        - Bicep Curls: 3 sets x 12 reps
-
-        Wednesday - Cardio & Core
-        - 30 min moderate intensity run
-        - Plank: 3 sets x 60 seconds
-        - Russian Twists: 3 sets x 20 reps
-        - Mountain Climbers: 3 sets x 15 reps
-
-        Friday - Lower Body Power
-        - Squats: 4 sets x 8-10 reps
-        - Deadlifts: 3 sets x 8 reps
-        - Lunges: 3 sets x 12 reps per leg
-        - Calf Raises: 3 sets x 15 reps
+        - Jumping Jacks: 2 sets * 20 reps
+        - Supermans: 3 sets x 10-15 reps
+        - Couch Squats: 2 sets * 10-15 reps
+        - Step, Step, Jump: 3 sets * 10 reps
+        - Plank twists: 2 sets * 10 reps
+        - Side Lying Arm Rotations: 3 sets * 10-15 reps
 
         Remember to warm up before each session and stay hydrated!`);
       setIsLoading(false);
