@@ -107,8 +107,8 @@
 /* Loading Icon */
 .loadingIcon {
   margin-top: 1rem;
-  height: 5rem;
-  width: 5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   animation: spin 1.8s linear infinite;
 }
 
@@ -138,13 +138,19 @@
   margin-bottom: 1rem;
 }
 
-.response-text {
+.response-text, .response-tip{
   color: #fff;
-  white-space: pre-line;
   line-height: 1.6;
   font-family: "Saira", sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
+  white-space: pre-wrap;
+}
+
+.response-tip{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color:rgb(123, 0, 0);
 }
 
 /* Download Icon */

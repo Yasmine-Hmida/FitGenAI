@@ -8,25 +8,42 @@ export default function App() {
   const [workoutPlan, setWorkoutPlan] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const generateWorkoutPlan = () => {
+  const generateWorkoutPlan = async () => {
     if (!userInput.trim()) return;
 
     setIsLoading(true);
+    setWorkoutPlan("");
 
-    // Simulate API call
-    setTimeout(() => {
-      setWorkoutPlan(`Based on your goals: "${userInput}", here's your personalized workout plan:
+    try {
+      // Call the FastAPI backend
+      const response = await fetch(
+        `http://localhost:8000/search?prompt=${encodeURIComponent(userInput)}`
+      );
 
-        - Jumping Jacks: 2 sets * 20 reps
-        - Supermans: 3 sets x 10-15 reps
-        - Couch Squats: 2 sets * 10-15 reps
-        - Step, Step, Jump: 3 sets * 10 reps
-        - Plank twists: 2 sets * 10 reps
-        - Side Lying Arm Rotations: 3 sets * 10-15 reps
+      if (!response.ok) {
+        throw new Error("Failed to fetch workout plan");
+      }
 
-        Remember to warm up before each session and stay hydrated!`);
-      setIsLoading(false);
-    }, 1500);
+      const data = await response.json();
+      const exercises = data.results;
+
+      // Format JSON into a readable text
+      let formattedPlan = `Based on your goals: "${userInput}", here's your personalized workout plan:\n\n`;
+      exercises.forEach((ex, i) => {
+        formattedPlan += `- Exercise ${i + 1}: ${ex.name}\n`;
+        formattedPlan += `    • ${ex.sets} sets * ${ex.reps} reps\n`;
+        formattedPlan += `    • Target: ${ex.target}\n`;
+        formattedPlan += `    • Secondary muscles: ${ex.secondary_muscles_full}\n`;
+        formattedPlan += `    • Equipment: ${ex.equipment}\n\n`;
+      });
+
+      setWorkoutPlan(formattedPlan);
+    } catch (err) {
+      console.error(err);
+      setWorkoutPlan("Sorry, there was an error generating your workout plan.");
+    }
+
+    setIsLoading(false);
   };
 
   const handleDownloadPDF = (planText) => {
@@ -52,7 +69,7 @@ export default function App() {
     doc.text(lines, 40, 100);
 
     // Save file
-    doc.save("workout_plan.pdf");
+    doc.save("FitGenAI_workout_plan.pdf");
   };
 
   return (
@@ -105,6 +122,7 @@ export default function App() {
           <div className="response-section">
             <h2 className="response-title">Your Personalized Workout Plan</h2>
             <p className="response-text">{workoutPlan}</p>
+            <h3 className="response-tip">Remember to warm up before each session and stay hydrated!</h3>
             <img
               className="downloadIcon"
               src={download}
