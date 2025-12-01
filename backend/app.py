@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Query                  # FastAPI for building our backend API
 from fastapi.middleware.cors import CORSMiddleware  # To allow requests from a different origin (Our frontend in this case)
-import pandas as pd
 from search_exercices import search_exercises 
 
 # Create the FastAPI app and enable CORS
