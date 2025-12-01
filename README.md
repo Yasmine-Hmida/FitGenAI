@@ -44,10 +44,18 @@ FitGenAI/
 
 ## How to Run
 
-### 1. Start the Backend
+### 1. Prepare the adequate environment
+
+To run FitGenAI locally you have to install:
+- NodeJS (**v20.19.0**): Required for React/Vite 
+- ReactJS (**v 19.1.1**) + Vite (**v 7.1.7**) 
+- Python (**v 3.12.6**) 
+
+### 2. Start the Backend
 
 ```
 cd FitGenAI/backend
+pip install -r requirements.txt  # To install SentenceTransformers, faiss, fastapi and all the dependencies used 
 python -m uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -55,11 +63,11 @@ Backend will run at: **[http://localhost:8000](http://localhost:8000)**
 
 ---
 
-### 2. Start the Frontend
+### 3. Start the Frontend
 
 ```
 cd FitGenAI/frontend
-npm install
+npm install      # This will install jsPDF and any dependency in package.json
 npm run dev
 ```
 
@@ -67,7 +75,8 @@ Frontend will run at: **[http://localhost:5173](http://localhost:5173)**
 
 ---
 
-### 3. Preprocessing (Optional)
+### 4. Preprocessing (Optional)
 
-The Preprocessing script is located in the `FitGenAI/preprocessing/` directory.
-Run it if you want to modify the dataset.
+The Preprocessing script is located in the `FitGenAI/preprocessing/` directory.  
+Run it if you want to modify the dataset.  
+If you choose to run it, you have to install **pandas**
