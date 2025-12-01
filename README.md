@@ -19,7 +19,7 @@
 - Sentence Transformers (Our model)
 - FAISS (Facebook AI Similarity Search)
 - Fast API (For Frontend-Backend integration)
-- Pandas (For fusion and preprocessing)
+- Pandas and numpy (For fusion and preprocessing)
 
 ---
 
@@ -55,7 +55,7 @@ To run FitGenAI locally you have to install:
 
 ```
 cd FitGenAI/backend
-pip install -r requirements.txt  # To install SentenceTransformers, faiss, fastapi and all the dependencies used 
+pip install -r requirements.txt  # To install SentenceTransformers, faiss, fastapi and all the dependencies used in backend
 python -m uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -78,5 +78,5 @@ Frontend will run at: **[http://localhost:5173](http://localhost:5173)**
 ### 4. Preprocessing (Optional)
 
 The Preprocessing script is located in the `FitGenAI/preprocessing/` directory.  
-Run it if you want to modify the dataset.  
-If you choose to run it, you have to install **pandas**
+Run it in **Google Colab** if you want to modify the dataset.  
+If you choose to run it, you have to create an account in **kaggle** in order get the file **kaggle.json** to get your API key for uploading the first dataset (Fitness Exercices).  
