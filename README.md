@@ -78,5 +78,4 @@ Frontend will run at: **[http://localhost:5173](http://localhost:5173)**
 ### 4. Preprocessing (Optional)
 
 The Preprocessing script is located in the `FitGenAI/preprocessing/` directory.  
-Run it if you want to modify the dataset.  
-If you choose to run it, you have to install **pandas**
+Run it in **Google Colab** if you want to modify the dataset.  
